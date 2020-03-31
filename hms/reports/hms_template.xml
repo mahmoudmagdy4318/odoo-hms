@@ -1,0 +1,51 @@
+<odoo>
+
+    <template id="hms_template">
+        <t t-call="web.html_container">
+
+            <t t-foreach="docs" t-as="o">
+                    <div class="page" style="border:4px solid blue;text-align:center;">
+                        <span style="color:red;font-size:50px;"> patient status report</span>
+                        <img style="width:300px;height:300px;"
+                          t-attf-src="data:image/*;base64,{{o.image}}"
+                          t-att-alt="o.fname"
+                          />
+                        <h1>
+                            Name: <span t-field="o.fname"/>
+                        </h1>
+                        <h1>
+                            age: <span t-field="o.Age"/>
+                        </h1>
+                        <h1>
+                            Department:<span t-field="o.department_id.name"/>
+                        </h1>
+                        <h1>
+                            Doctors:
+                            <t t-foreach="o.doctors" t-as="doctor">
+                            <span t-field="doctor.fname" />
+                            </t>
+                        </h1>
+                        <h1 style="color:red;margin:5px auto;">log history</h1>
+                        <table border="1" style="width:100%;">
+                            <tr style="background-color:blue;font-size:40px;color:red;">
+                                <th>User</th>
+                                <th>Date</th>
+                                <th>Info</th>
+                            </tr>
+                            <t t-foreach="o.logs" t-as="log">
+                             <tr style="background-color:cyan;font-size:20px;">
+                                <td><span t-field="log.create_uid" /></td>
+                                <td><span t-field="log.create_date" /></td>
+                                <td><span t-field="log.description" /></td>
+                             </tr>
+                            </t>
+                        </table>
+
+
+
+                    </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_user_department,access_users_department,model_hms_department,hms_users_group,1,0,0,0
+access_user_doctors,access_users_doctors,model_hms_doctors,hms_users_group,1,0,0,0
+access_user_patients,access_users_patients,model_hms_patient,hms_users_group,1,1,1,0
+
+access_manager_department,access_manager_department,model_hms_department,hms_manager_group,1,1,0,1
+access_manager_doctors,access_manager_doctors,model_hms_doctors,hms_manager_group,1,1,0,1
+access_manager_patients,access_manager_patients,model_hms_patient,hms_manager_group,1,1,0,1
+access_manager_logs,access_manager_logs,model_hms_logs,hms_manager_group,1,1,0,1
+
+
